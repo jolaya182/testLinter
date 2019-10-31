@@ -14,15 +14,15 @@ import proPic from '../pictures/profile.png';
 
 const Picture = ({ picture }) => (
   <a href="/">
-            <img
-              className="pic"
-              src={picture}
-              onError={e => {
-                e.target.onerror = null;
-                e.target.src = proPic;
-              }}
-              alt="profile"
-            />
+    <img
+      className="pic"
+      src={picture}
+      onError={e => {
+        e.target.onerror = null;
+        e.target.src = proPic;
+      }}
+      alt="profile"
+    />
   </a>
 );
 Picture.defaultProps = {

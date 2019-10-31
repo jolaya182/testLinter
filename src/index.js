@@ -5,6 +5,6 @@ import ReactDom from 'react-dom';
 import App from './components/App.jsx';
 
 ReactDom.render(
-  React.createfElement(App, null, ''),
+  React.createElement(App, null, ''),
   document.getElementById('app')
 );
