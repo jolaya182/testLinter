@@ -1,13 +1,13 @@
-/* *
-  title: Picture.js
-
-  date: / /2019
-
-  author:  javier olaya
-
-  description: comppnent to hold the piture
-
+/**
+ * title: Picture.js
+ *
+ * date: / /
+ *
+ * author: javier olaya
+ *
+ * description: component to hold the picture
  */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import proPic from '../pictures/profile.png';

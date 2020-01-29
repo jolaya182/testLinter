@@ -1,3 +1,13 @@
+/**
+ * title: LoginForm.js
+ *
+ * date: / /
+ *
+ * author: javier olaya
+ *
+ * description: component to hold the picture
+ */
+
 import React from 'react';
 import { returnStatement } from '@babel/types';
 
