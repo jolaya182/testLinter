@@ -102,8 +102,6 @@ nav.mainMenu {
     padding: 1em;
     font-size: 1.5em;
     flex-direction: 'row';
-    // display: flex;
-    // flex-wrap: wrap;
   }
 }
 
@@ -116,39 +114,41 @@ nav.mainMenu {
 }
 
 /* Mobile */
-@media only screen and (max-width: 611px ){
+@media only screen and (max-width: 610px ){
   body{
     background-color: #F09A9D;
   }
   nav.mainMenu {
     flex-direction: row;
     width: 100vh;
-    // min-width: 20%;
     min-height: auto;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
   }
 }
 
 /* Tablet */
+@media only screen and (min-width:611px) and (max-width: 1025px ){
+  body{
+    background-color:#F5CF8E
+  }
+}
 
 /* Desktop */
-@media only screen and (min-width: 961px){
+@media only screen and (min-width: 1025px){
   body{
     background-color: #B2D6FF;
   }
   div.page {
-    // display: flex;
     width: 960px;
     margin: auto;
   }
   nav.mainMenu {
     flex-direction: row;
     width: 100vh;
-    // min-width: 20%;
     min-height: auto;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
   }
 }
