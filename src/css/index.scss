@@ -17,11 +17,13 @@ $main-font: sans-serif;
 // height:100%;
 //}
 
-body {
+body,
+html {
   font-family: $main-font;
   font-size: 100%;
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
 h1,
@@ -44,11 +46,6 @@ a {
   &:hover {
     text-decoration: underline;
   }
-}
-
-div.page {
-  display: flex;
-  height: 100%;
 }
 
 div.whoops404 {
@@ -78,30 +75,60 @@ div.whoops404 {
 }
 
 // myFurtureApp furtureApp
-section.myFurtureApp,
-section.furtureApp {
-  font-size: 3em;
-  color: slategray;
-  h1 {
-    font-size: 3em;
-  }
+// section.myFurtureApp,
+// section.furtureApp {
+//   font-size: 3em;
+//   color: slategray;
+//   h1 {
+//     font-size: 3em;
+//   }
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  align-items: stretch;
+}
+
+div.page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside.asideBar {
+  width: 100%;
+  display: flex;
+  background-color: slategrey;
 }
 
 nav.mainMenu {
+  height: 10vh;
   display: flex;
-  flex-direction: column;
-  background-color: slategray;
+  flex-wrap: nowrap;
   color: ghostwhite;
-  // height: 100vh;
-  width: 20%;
-  min-width: 20%;
-  min-height: 100vh;
-  text-align: center;
+  background-color: slategray;
+
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: stretch;
   a {
     color: ghostwhite;
     padding: 1em;
     font-size: 1.5em;
-    flex-direction: 'row';
   }
 }
 
@@ -113,42 +140,179 @@ nav.mainMenu {
   margin: auto;
 }
 
-/* Mobile */
-@media only screen and (max-width: 610px ){
-  body{
-    background-color: #F09A9D;
-  }
-  nav.mainMenu {
-    flex-direction: row;
-    width: 100vh;
-    min-height: auto;
-    justify-content: space-evenly;
-    align-items: center;
+.MiddleSection {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+}
 
+.MiddleHeader {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.rightBody {
+  width: 100%;
+  height: 100%;
+}
+
+.secticle {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.footerClass {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: slategrey;
+}
+.footerPiece {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// section, article, aside, footer, header, nav {
+//   display: block;
+// }
+
+/* Mobile */
+@media only screen and (max-width: 610px) {
+  body {
+    background-color: #f09a9d;
+  }
+
+  aside.asideBar {
+    height: 10%;
+  }
+
+  nav.mainMenu {
+    height: 10%;
+  }
+
+  .rightBody {
+    width: 100%;
+  }
+
+  .MiddleSection {
+    width: 100%;
+  }
+
+  .footerClass {
+    width: 100%;
+    height: auto;
+    background-color: slategrey;
   }
 }
 
 /* Tablet */
-@media only screen and (min-width:611px) and (max-width: 1025px ){
-  body{
-    background-color:#F5CF8E
+@media only screen and (min-width: 611px) and (max-width: 1025px) {
+  body {
+    background-color: #f5cf8e;
+  }
+  .secticle {
+    width: 50%;
+    height: 40%;
+  }
+
+  div.page {
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+
+  aside.asideBar {
+    width: 30%;
+  }
+
+  nav.mainMenu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .rightBody {
+    height: 100%;
+  }
+
+  .MiddleSection {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .MiddleHeader {
+    height: 10%;
+  }
+
+  .footerClass {
+    height: 10%;
+  }
+  .footerPiece {
+    width: 25%;
   }
 }
 
 /* Desktop */
-@media only screen and (min-width: 1025px){
-  body{
-    background-color: #B2D6FF;
+@media only screen and (min-width: 1025px) {
+  body {
+    background-color: #b2d6ff;
   }
   div.page {
     width: 960px;
     margin: auto;
+    height: 100%;
   }
+
+  .secticle {
+    width: 50%;
+    height: 40%;
+  }
+
+  aside.asideBar {
+    height: 10%;
+  }
+
   nav.mainMenu {
-    flex-direction: row;
-    width: 100vh;
-    min-height: auto;
+    width: 100%;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
+    flex-direction: row;
+    a {
+      flex-direction: column;
+    }
+  }
+
+  .MiddleHeader {
+    height: 10%;
+  }
+  .rightBody {
+    height: 90%;
+    border: 1px solid black;
+  }
+
+  .MiddleSection {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footerClass {
+    height: 10%;
+    width: 100%;
+    background-color: slategrey;
+  }
+  .footerPiece {
+    width: 25%;
   }
 }

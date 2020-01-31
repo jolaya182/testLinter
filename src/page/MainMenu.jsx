@@ -18,14 +18,16 @@ const selectedStyle = {
 };
 
 const MainMenu = () => (
-  <nav className="mainMenu">
-    <NavLink to="/Profile" activeStyle={selectedStyle}>
-      [Profile]
-    </NavLink>
-    <NavLink to="/Feature" activeStyle={selectedStyle}>
-      [Feature]
-    </NavLink>
-  </nav>
+  <aside className="asideBar">
+    <nav className="mainMenu">
+      <NavLink to="/Profile" activeStyle={selectedStyle}>
+        [Profile]
+      </NavLink>
+      <NavLink to="/Feature" activeStyle={selectedStyle}>
+        [Feature]
+      </NavLink>
+    </nav>
+  </aside>
 );
 
 export default MainMenu;

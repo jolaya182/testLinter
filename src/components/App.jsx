@@ -13,7 +13,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import ErrorBoundary from './ErrorBoundary';
-import { Whoops404, myComponent } from '../page';
+import { Whoops404, myComponent, articleHtml } from '../page';
 import pages from '../css/index.scss';
 
 const App = () => (

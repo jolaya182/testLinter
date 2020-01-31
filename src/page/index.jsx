@@ -12,13 +12,16 @@
 // pages as exported components
 import React from 'react';
 import MainMenu from './MainMenu';
-// bring what ever component to render
+import MiddleBody from './MiddleBody';
 
-export const Whoops404 = () => (
-  <div className="">
+// bring what ever component to render
+import SomeArticle from '../components/SomeArticle';
+
+export const Whoops404 = ({ location }) => (
+  <div className="whoops404">
     <h1>
       resources not found at
-      {location.pathname}
+      {` ${location.pathname}`}
     </h1>
   </div>
 );
@@ -30,4 +33,12 @@ export const PageTemplate = ({ children }) => (
   </div>
 );
 
-export const myComponent = () => <PageTemplate />;
+export const myComponent = () => (
+  <PageTemplate>
+    <div className="rightBody">
+      <MiddleBody />
+    </div>
+  </PageTemplate>
+);
+
+export const articleHtml = () => <SomeArticle />;
