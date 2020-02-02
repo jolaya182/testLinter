@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * title: LoginForm.js
  *
@@ -9,7 +10,6 @@
  */
 
 import React from 'react';
-import { returnStatement } from '@babel/types';
 
 export default class LoginForm extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export default class LoginForm extends React.Component {
     const options = {
       method: 'GET',
       headers: {
-        Authorization: 'Bearer ' + token,
+        Authorization: `Bearer ${token}`,
         Accept: 'application/json',
         'Content-Type': 'application/json'
       }
@@ -54,7 +54,7 @@ export default class LoginForm extends React.Component {
   submitCredentials = e => {
     e.preventDefault();
     const { username, password } = this.state;
-    const data = { username: username, password: password };
+    const data = { username, password };
     console.log('submiting credentials');
     const options = {
       method: 'POST',
@@ -112,7 +112,7 @@ export default class LoginForm extends React.Component {
 
   setSession = token => {
     sessionStorage.setItem('jwtToken', token);
-    this.setState(() => ({ token: token }));
+    this.setState(() => ({ token }));
   };
 
   logout = () => {
@@ -135,7 +135,7 @@ export default class LoginForm extends React.Component {
         <label>
           <input type="text" onChange={onPasswordChange} value={password} />
         </label>
-        <input type="submit" value="submit"></input>
+        <input type="submit" value="submit" />
         <input type="button" value="logout" onClick={logout} />
       </form>
     );
