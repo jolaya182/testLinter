@@ -14,6 +14,7 @@ import PropTypes from 'prop-types';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import ErrorBoundary from './ErrorBoundary';
 import { Whoops404, myComponent, articleHtml } from '../page';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import pages from '../css/index.scss';
 
 const App = () => (

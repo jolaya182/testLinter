@@ -10,7 +10,7 @@
  */
 // main menu page component
 import React from 'react';
-import Form from '../components/Form';
+import MyForm from '../components/MyForm';
 
 // import { NavLink } from 'react-router-dom';
 // bring what ever component to render
@@ -28,7 +28,7 @@ const MiddleBody = () => (
       </header>
       <section className="secticle">Section</section>
       <section className="secticle formContainer">
-        <Form />
+        <MyForm />
       </section>
       <article className="secticle">Article</article>
       <article className="secticle paragraph-ident">
