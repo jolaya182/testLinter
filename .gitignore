@@ -38,7 +38,7 @@ jspm_packages/
 src/keys
 src/jwt
 package-lock.json
-src/webFonts/*
+src/webFonts
 !src/webFonts/roboto_light_macroman
 !src/webFonts/roboto_lightitalic_macroman
 !src/webFonts/roboto_bold_macroman
