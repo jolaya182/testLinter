@@ -18,9 +18,40 @@ export default class Form extends React.Component {
     this.state = {
       username: 'admin',
       password: 'password',
-      token: ''
+      token: '',
+      debounceTimeRate: 1000
     };
   }
+
+  // eslint-disable-next-line react/sort-comp
+  conLog = () => {
+    console.log('clicked');
+  };
+
+  debounce = (func, wait, immediate = false) => {
+    let timeout;
+
+    return function executedFunction() {
+      const context = this;
+      // eslint-disable-next-line prefer-rest-params
+      const args = { ...arguments };
+
+      const later = () => {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+
+      const callNow = immediate && !timeout;
+
+      clearTimeout(timeout);
+
+      timeout = setTimeout(later, wait);
+
+      if (callNow) func.apply(context, args);
+    };
+  };
+
+  onSubmission = this.debounce(this.conLog, 1000);
 
   componentDidMount = () => {
     const token = sessionStorage.getItem('jwtToken');
@@ -125,7 +156,8 @@ export default class Form extends React.Component {
       submitCredentials,
       onUsernameChange,
       onPasswordChange,
-      logout
+      logout,
+      onSubmission
     } = this;
     const { username, password } = this.state;
     return (
@@ -166,7 +198,6 @@ export default class Form extends React.Component {
               name="talkType"
               type="radio"
               value="workshop"
-              checked
             />
             <label htmlFor="talkType2" className="radioLabel">
               Workshop
@@ -199,7 +230,9 @@ export default class Form extends React.Component {
             <span> {`I'm actually available the date of the talk `} </span>
           </div>
           <div className="formRow">
-            <button>Submit</button>
+            <button onClick={onSubmission} id="bu">
+              Submit
+            </button>
           </div>
         </form>
       </div>
