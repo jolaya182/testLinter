@@ -42,7 +42,17 @@ module.exports = env =>
             ]
           },
           {
-            test: /\.(png|svg|jpg|gif)$/,
+            test: /\.(woff|woff2|eot|tff|svg)$/,
+            exclude: /node_modules/,
+            loader: 'url-loader',
+            options: {
+              publicPath: './fonts/',
+              name: '../src/webFonts/[name].[ext]'
+              // limit: 1000
+            }
+          },
+          {
+            test: /\.(png|svg|jpg|gif|)$/,
             use: ['file-loader']
           }
         ]

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /**
  * title: MiddleBody.jsx
  *
@@ -9,7 +10,6 @@
  */
 // main menu page component
 import React from 'react';
-import Footer from './Footer';
 
 // import { NavLink } from 'react-router-dom';
 // bring what ever component to render
@@ -20,15 +20,29 @@ import Footer from './Footer';
 // };
 
 const MiddleBody = () => (
-  <div className="MiddleSection">
-    <header className=" MiddleHeader ">
-      <h3 className=" MiddleTopBody">MiddleTopBody</h3>
-    </header>
-    <section className="secticle">Section</section>
-    <section className="secticle">Section</section>
-    <article className="secticle">Article</article>
-    <article className="secticle">Article</article>
-    <Footer />
+  <div className="MiddleWrapper">
+    <div className="MiddleSection">
+      <header className=" MiddleHeader ">
+        <h3 className=" MiddleTopBody">MiddleTopBody</h3>
+      </header>
+      <section className="secticle">Section</section>
+      <section className="secticle">Section</section>
+      <article className="secticle">Article</article>
+      <article className="secticle paragraph-ident">
+        <h2>Web Fonts</h2>
+        <p>
+          This paragraph is using a web font call
+          <em> Roboto Light </em>
+          {` . It’s a little more refined and lends some`}
+          <strong>{` unique character`}</strong>
+          {` to the web page.`}
+        </p>
+        <p>
+          Everything in typography is about being subtle, and styling the
+          separation between paragraphs is no different.
+        </p>
+      </article>
+    </div>
   </div>
 );
 

@@ -13,6 +13,7 @@
 import React from 'react';
 import MainMenu from './MainMenu';
 import MiddleBody from './MiddleBody';
+import Footer from './Footer';
 
 // bring what ever component to render
 import SomeArticle from '../components/SomeArticle';
@@ -37,6 +38,7 @@ export const myComponent = () => (
   <PageTemplate>
     <div className="rightBody">
       <MiddleBody />
+      <Footer />
     </div>
   </PageTemplate>
 );

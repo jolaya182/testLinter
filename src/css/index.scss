@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'Roboto';
+  src:url("../webFonts/roboto_light_macroman/Roboto-Light-webfont.woff") format('woff');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto Light Italic';
+  src: url("../webFonts/roboto_lightitalic_macroman/Roboto-LightItalic-webfont.woff") format('woff');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url("../webFonts/roboto_bold_macroman/Roboto-Bold-webfont.woff") format('woff');
+  font-style: normal;
+  font-weight: 700;
+}
 .column {
   display: flex;
   flex-direction: column;
@@ -12,7 +32,7 @@
   flex: 1;
 }
 
-$main-font: sans-serif;
+$main-font: Roboto,sans-serif;
 //html, body, #app, #app>div{
 // height:100%;
 //}
@@ -20,10 +40,28 @@ $main-font: sans-serif;
 body,
 html {
   font-family: $main-font;
+  font-weight: 300;
   font-size: 100%;
+  font-size: 20px;
+  line-height: 1.6em;
   padding: 0;
   margin: 0;
   height: 100%;
+}
+
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
+}
+
+.paragraph-ident p{
+  text-indent: 1em;
+  margin-bottom:0;
+}
+.paragraph-ident  p:first-child {
+  text-indent: 0;
 }
 
 h1,
@@ -35,6 +73,7 @@ h6,
 th,
 header {
   font-family: $main-font;
+  line-height: 1.3em;
   font-size: 100%;
   padding: 0;
   margin: 0;
@@ -140,10 +179,25 @@ nav.mainMenu {
   margin: auto;
 }
 
+.rightBody {
+  width: 100%;
+   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.MiddleWrapper{
+  display: flex;
+  flex-direction: row;
+  flex:1;
+}
+
 .MiddleSection {
   width: 100%;
   min-width: 100%;
   height: 100%;
+  flex-direction: row;
 }
 
 .MiddleHeader {
@@ -155,22 +209,32 @@ nav.mainMenu {
   padding: 10px;
 }
 
-.rightBody {
-  width: 100%;
-  height: 100%;
-}
-
 .secticle {
   width: 100%;
-  height: 300px;
+  // keep this class padded and with some text it wont need height defined
+  // height: 300px;
+  max-width: 540px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  padding: 2em 2em;
+}
+.secticle h2{
+  font-size: 30px;
+  margin-bottom:.7em;
+}
+.secticle p, .section figure{
+  // margin-bottom: 1em;
+}
+.secticle p:last-child, .section figure:last-child{
+  margin-bottom: 0;
 }
 
 .footerClass {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   background-color: slategrey;
@@ -187,7 +251,7 @@ nav.mainMenu {
 // }
 
 /* Mobile */
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 540px) {
   body {
     background-color: #f09a9d;
   }
@@ -202,32 +266,33 @@ nav.mainMenu {
 
   .rightBody {
     width: 100%;
+    display:block;
   }
 
-  .MiddleSection {
-    width: 100%;
-  }
+  // .MiddleSection {
+  //   width: 100%;
+  // }
 
-  .footerClass {
-    width: 100%;
-    height: auto;
-    background-color: slategrey;
-  }
+  // .footerClass {
+  //   width: 100%;
+  //   height: auto;
+  //   background-color: slategrey;
+  // }
 }
 
 /* Tablet */
-@media only screen and (min-width: 611px) and (max-width: 1025px) {
+@media only screen and (min-width: 541px) and (max-width: 1025px) {
   body {
     background-color: #f5cf8e;
   }
   .secticle {
     width: 50%;
-    height: 40%;
   }
 
   div.page {
     flex-wrap: nowrap;
-    height: 100%;
+    min-height: 100%;
+    margin: 0;
   }
 
   aside.asideBar {
@@ -244,24 +309,11 @@ nav.mainMenu {
     }
   }
 
-  .rightBody {
-    height: 100%;
-  }
-
   .MiddleSection {
     display: flex;
     flex-wrap: wrap;
   }
-  .MiddleHeader {
-    height: 10%;
-  }
 
-  .footerClass {
-    height: 10%;
-  }
-  .footerPiece {
-    width: 25%;
-  }
 }
 
 /* Desktop */
@@ -277,7 +329,6 @@ nav.mainMenu {
 
   .secticle {
     width: 50%;
-    height: 40%;
   }
 
   aside.asideBar {
@@ -298,7 +349,7 @@ nav.mainMenu {
     height: 10%;
   }
   .rightBody {
-    height: 90%;
+    min-height: 90%;
     border: 1px solid black;
   }
 
@@ -311,6 +362,7 @@ nav.mainMenu {
     height: 10%;
     width: 100%;
     background-color: slategrey;
+    align-self: flex-end;
   }
   .footerPiece {
     width: 25%;
