@@ -119,11 +119,12 @@ a {
 
   // width: 80%;
   margin: 40px 0;
-  padding: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .speakerFormHeader h1 {
-  font-size: 30px;
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
@@ -153,6 +154,11 @@ a {
   width: 100%;
   padding: 7px;
   font-size: 14px;
+}
+
+input[type='email'] {
+  width: 100%;
+;
 }
 
 .formRow input[type='text']:invalid,
@@ -201,6 +207,7 @@ a {
   margin-bottom: 10px;
   padding: 7px;
   resize: none;
+  width: 100%;
 }
 
 .formRow .instructions {
@@ -216,12 +223,14 @@ a {
 .formRow button {
   font-size: 16px;
   font-weight: bold;
-  color: #ffffff;
+  // color: #ffffff;
   border: none;
   border-radius: 3px;
   background-color: #5995da;
-  padding: 10px 40px;
+  padding: 10px 5px;
   cursor: pointer;
+  width:100%;
+  // display: flex;
 }
 
 .formRow button:hover {
@@ -298,6 +307,7 @@ aside.asideBar {
   width: 100%;
   display: flex;
   background-color: slategrey;
+  display:flex;
 }
 
 nav.mainMenu {
@@ -313,7 +323,8 @@ nav.mainMenu {
   a {
     color: ghostwhite;
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 6.4vw;
+    
   }
 }
 
@@ -362,10 +373,12 @@ nav.mainMenu {
   max-width: 540px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  padding: 2em 2em;
+  padding: 1em 1em;
+  font-size: 14px;
 }
 .secticle h2 {
   font-size: 30px;
@@ -380,6 +393,12 @@ nav.mainMenu {
   margin-bottom: 0;
 }
 
+.formSectionContainer {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+
 .footerClass {
   display: flex;
   flex-direction: row;
@@ -392,6 +411,11 @@ nav.mainMenu {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+//overide bootstrap css
+.btn {
+  width: 100%;
 }
 
 //form css
@@ -446,6 +470,7 @@ nav.mainMenu {
     a {
       width: 100%;
       text-align: center;
+      font-size: 2.4vw;
     }
   }
 
@@ -482,6 +507,7 @@ nav.mainMenu {
     flex-direction: row;
     a {
       flex-direction: column;
+      font-size: 2.4vw;
     }
   }
 
@@ -529,13 +555,13 @@ nav.mainMenu {
   .form-row select,                 /* These */
   .form-row textarea {
     /* Selectors */
-    width: 250px;
+    // width: 250px;
     height: initial;
   }
 
   .formRow label {
     text-align: right;
-    width: 120px;
+    // width: 120px;
     margin-top: 7px;
     padding-right: 20px;
   }

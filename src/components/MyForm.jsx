@@ -163,7 +163,7 @@ export default class MyForm extends React.Component {
     } = this;
     const { username, password } = this.state;
     return (
-      <div>
+      <div className="formSectionContainer">
         <header className="speakerFormHeader">
           <h1>Speaker submision</h1>
           <p>
@@ -181,7 +181,7 @@ export default class MyForm extends React.Component {
               id="email"
               name="email"
               type="email"
-              placeholder="joe@example.com"
+              // placeholder="joe@example.com"
             />
           </div>
           <fieldset className="legacyMyFormRow">
@@ -232,7 +232,9 @@ export default class MyForm extends React.Component {
             <span> {`I'm actually available the date of the talk `} </span>
           </div>
           <div className="formRow">
-            <button onClick={onSubmission}>Submit</button>
+            <button type="button" onClick={onSubmission} value="Submit">
+              Submit
+            </button>
           </div>
         </form>
         <Form>
