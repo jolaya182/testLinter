@@ -1,10 +1,16 @@
 
+    
     "test": "jest --env=jsdom",
     "testJest": "jest src/tests/sum --notify --config=jest.config.js",
     "testP": " node ./src/tests/puppeteer/example.js",
     "gql": "node ./src/gql/server.js",
-    "start": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback --env.PLATFORM=local --env.VERSION=stag",
-    "prebuild": "webpack --mode production --config config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress",
+    "postinstall": "npm start",
+    "runserver": "(cd ./src &&  nodemon  ./server)",
+    "prestart": "(cd ./src && start nodemon  ./server)  ",
+    "start": " webpack serve   --hot --env PLATFORM=local --env VERSION=stag --mode development --config config/webpack.base.config.js --history-api-fallback --open Chrome.exe",
+    "startwebapplication": " webpack serve  --hot --env PLATFORM=local --env VERSION=stag --mode development --config config/webpack.base.config.js --history-api-fallback --open Chrome.exe",
+    "poststart": "",
+    "prebuild": "webpack --mode production --config config/webpack.prod.config.js --env PLATFORM=production --env VERSION=stag --progress",
     "lint": "eslint --debug src/. ",
     "lintFix": "eslint --debug src/. --fix",
     "prettycheck": "prettier  --check src/components/App.jsx",
@@ -15,6 +21,7 @@
         "pre-commit": "pretty-quick --staged"
       }
     }
+  }
 
 
 "devDependencies": {

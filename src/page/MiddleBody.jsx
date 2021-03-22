@@ -10,7 +10,7 @@
  */
 // main menu page component
 import React from 'react';
-import MyForm from '../components/MyForm';
+import MyForm from '../components/UtilComponents/MyForm';
 
 // import { NavLink } from 'react-router-dom';
 // bring what ever component to render
@@ -21,13 +21,13 @@ import MyForm from '../components/MyForm';
 // };
 
 const MiddleBody = () => (
-  <div className="MiddleWrapper">
-    <div className="MiddleSection">
-      <header className=" MiddleHeader ">
+  <div className="middle-wrapper">
+    <div className="middle-section">
+      <header className=" middle-header ">
         <h3 className=" MiddleTopBody">MiddleTopBody</h3>
       </header>
       <section className="secticle">Section</section>
-      <section className="secticle formContainer">
+      <section className="secticle form-Container">
         <MyForm />
       </section>
       <article className="secticle">Article</article>

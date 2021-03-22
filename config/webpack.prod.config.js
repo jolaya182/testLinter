@@ -4,12 +4,12 @@
 /**
  * Production webpack config.
  */
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const Visualizer = require('webpack-visualizer-plugin');
+// const Visualizer = require('webpack-visualizer-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const baseConfig = require('./webpack.base.config');
@@ -64,7 +64,7 @@ const prodConfiguration = () =>
         }),
         new MiniCssExtractPlugin(),
         new OptimizeCssAssetsPlugin(),
-        new Visualizer({ filename: './statistics.html' })
+        // new Visualizer({ filename: './statistics.html' })
       ]
     }
   ]);

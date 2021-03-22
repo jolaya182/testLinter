@@ -1,7 +1,8 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable no-unused-vars */
 /**
- * title: MyForm.js
+ * title: Form.js
  *
  * date: / /
  *
@@ -11,10 +12,8 @@
  */
 
 import React from 'react';
-import { Form, ButtonToolbar, Dropdown } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 
-export default class MyForm extends React.Component {
+export default class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -163,28 +162,28 @@ export default class MyForm extends React.Component {
     } = this;
     const { username, password } = this.state;
     return (
-      <div className="formSectionContainer">
-        <header className="speakerFormHeader">
+      <div>
+        <header className="speaker-form-header">
           <h1>Speaker submision</h1>
           <p>
-            <em>Want to speak at our conference? Fill out this MyForm</em>
+            <em>Want to speak at our conference? Fill out this form</em>
           </p>
         </header>
-        <form action="" method="get" className="speakerForm">
-          <div className="formRow">
+        <form action="" method="get" className="speaker-form">
+          <div className="form-row">
             <label htmlFor="fullName">Name</label>
             <input id="fullName" name="fullName" type="text" />
           </div>
-          <div className="formRow">
+          <div className="form-row">
             <label htmlFor="email">Email</label>
             <input
               id="email"
               name="email"
               type="email"
-              // placeholder="joe@example.com"
+              placeholder="joe@example.com"
             />
           </div>
-          <fieldset className="legacyMyFormRow">
+          <fieldset className="legacy-form-row">
             <legend>Type of Talk</legend>
             <input
               id="talkType1"
@@ -205,7 +204,7 @@ export default class MyForm extends React.Component {
               Workshop
             </label>
           </fieldset>
-          <div className="formRow">
+          <div className="form-row">
             <label htmlFor="tShirt">T-Shirt size</label>
             <select id="tShirt" name="tShirt">
               <option value="xs">Extra small</option>
@@ -214,15 +213,15 @@ export default class MyForm extends React.Component {
               <option value="l">Large</option>
             </select>
           </div>
-          <div className="formRow">
+          <div className="form-row">
             <label htmlFor="abstract">Abstract</label>
             <textarea id="abstract" name="abstract" />
             <div className="instructions">
               Describe your talk in 500 words or less
             </div>
           </div>
-          <div className="formRow">
-            <label className="checkboxLabel" htmlFor="available" />
+          <div className="form-row">
+            <label className="checkbox-label" htmlFor="available" />
             <input
               id="available"
               name="available"
@@ -231,52 +230,12 @@ export default class MyForm extends React.Component {
             />
             <span> {`I'm actually available the date of the talk `} </span>
           </div>
-          <div className="formRow">
-            <button type="button" onClick={onSubmission} value="Submit">
+          <div className="form-row">
+            <button onClick={onSubmission} id="bu">
               Submit
             </button>
           </div>
         </form>
-        <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              {`We'll never share your email with anyone else. `}
-            </Form.Text>
-            <div className="mb-3">
-              <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  Dropdown Button
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
-                    Another action
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
-                    Something else
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Form.Check type="radio" id="default-radio1" label="Main Stage" />
-              <Form.Check type="radio" id="default-radio2" label="Workshop" />
-              <Form.Check
-                type="checkbox"
-                id="default-checkbox1"
-                label="I'm actually available the date of the talk"
-              />
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control as="textarea" rows="3" />
-              </Form.Group>
-            </div>
-            <ButtonToolbar>
-              <Button> primary</Button>
-            </ButtonToolbar>
-          </Form.Group>
-        </Form>
       </div>
     );
   }

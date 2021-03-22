@@ -18,8 +18,8 @@ const selectedStyle = {
 };
 
 const MainMenu = () => (
-  <aside className="asideBar">
-    <nav className="mainMenu">
+  <aside className="aside-bar">
+    <nav className="main-menu">
       <NavLink to="/Profile" activeStyle={selectedStyle}>
         [Profile]
       </NavLink>

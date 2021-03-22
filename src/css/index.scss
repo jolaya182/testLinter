@@ -41,7 +41,11 @@ $main-font: Roboto, sans-serif;
 //   align-items: center;
 // }
 
-.formContainer {
+.agendaDayPanel{
+  display: flex;
+}
+
+.form-Container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,9 +78,9 @@ strong {
   text-indent: 0;
 }
 
-h1,
+// h1,
 h2,
-h3,
+// h3,
 h4,
 h5,
 h6,
@@ -110,8 +114,128 @@ a {
   flex: 1;
 }
 
+.half-Hour{
+  height: 80px;
+  border-bottom: solid  #727272 1px;
+  color: black
+}
+
+
+.hour{
+  border-bottom: solid black 1px;
+  color: black;
+  font-weight: bold ;
+}
+
+.hour-no-line{
+  color: black;
+  font-weight: bold ;
+}
+
+.hour-height{
+  height: 107px;
+}
+.all-day-padding {
+  padding:5px;
+  background-color: #dddddd;
+}
+.half-day-margin-pink{
+  margin-top: 20px;
+  color:#ff30a8;
+}
+.half-day-margin{
+  margin-top: 20px;
+  color:#2bb8ff;
+}
+.half-day-pink{
+  border-top: solid #ff30a8 1px;
+  background-color: rgba(255, 48, 168, 0.1);
+  font-weight: bold ;
+  text-align: center;
+}
+
+
+.half-day-blue{
+  border-top: solid #2bb8ff 1px;
+  background-color:rgba(43, 184, 255, 0.1);
+  color:#2bb8ff;
+  font-weight: bold ;
+  text-align: center;
+}
+
+.top-date{
+  text-align: right;
+  padding:35px;
+  border-bottom: solid 1px ;
+  font-weight: 600;
+}
+
+.all-day-event-activity{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2px;  
+  padding-left: 10px;
+  padding-top:15px;
+}
+.event-activity{
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-left: 5px;
+  margin-right: 10px;
+  text-align: left;
+  border: solid 0px black;
+  height: 54px;
+  line-height: 15px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.event-activity-wrap{
+  padding: 2px;  
+  padding-left: 10px;
+}
+
+.eventActivityLightText{
+  color: rgba(114, 114, 114, 0.8);
+  margin-right: 4px;
+  font-weight: 800;
+}
+
+.even-activity-name{
+  margin-right: 4px;
+}
+
+.event-activity-green{
+  color: #107f17;
+  font-weight:700;
+  margin-right: 4px;
+}
+.event-activity-tab{
+  background-color: #1abb25;
+  width:10px;
+}
+
+.eventActivityWraper{
+  float: 'left';
+  margin-right: 10px;
+}
+
+.grouped-activity{
+  display: 'flex'
+}
+.day-column-wrapper{
+  width:100%;
+}
+.time-column{
+  width: '100%';
+  display: 'flex'
+}
+.time-column-wrapper{
+  width: '160px';
+}
 //form
-.speakerFormHeader {
+.speaker-form-header {
   text-align: center;
   background-color: #f6f7f8;
   border: 1px solid #d6d9dc;
@@ -123,12 +247,12 @@ a {
   padding-right: 15px;
 }
 
-.speakerFormHeader h1 {
+.speaker-form-header h1 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.speakerForm {
+.speaker-form {
   background-color: #f6f7f8;
   border: 1px solid #d6d9dc;
   border-radius: 3px;
@@ -138,7 +262,7 @@ a {
   margin: 0 0 40px 0;
 }
 
-.formRow {
+.form-row {
   margin-bottom: 40px;
   display: flex;
   justify-content: flex-start;
@@ -146,7 +270,7 @@ a {
   flex-wrap: wrap;
 }
 
-.formRow input[type='text'],
+.form-row input[type='text'],
 .form-row input[type='email'] {
   background-color: #ffffff;
   border: 1px solid #d6d9dc;
@@ -161,42 +285,42 @@ input[type='email'] {
 ;
 }
 
-.formRow input[type='text']:invalid,
-.formRow input[type='email']:invalid {
+.form-row input[type='text']:invalid,
+.form-row input[type='email']:invalid {
   border: 1px solid #d55c5f;
   color: D55c5f;
   box-shadow: none; //remove default red glow in firefox
 }
-.formRow label {
+.form-row label {
   margin-bottom: 15px;
 }
 
-.legacyFormRow {
+.legacy-form-row {
   border: none;
   margin-bottom: 40px;
 }
 
-.legacyFormRow legend {
+.legacy-form-row legend {
   margin-bottom: 15px;
 }
 
-.legacyFormRow input[type='radio'] {
+.legacy-form-row input[type='radio'] {
   margin-top: 2px;
 }
 
-.legacyFormRow .radioLabel,
-.legacyFormRow input[type='radio'] {
+.legacy-form-row .radioLabel,
+.legacy-form-row input[type='radio'] {
   float: left;
 }
 
-.formRow select {
+.legacy-form-row select {
   width: 100%;
   padding: 5px;
   font-size: 14px;
   -webkit-appearance: none;
 }
 
-.formRow textarea {
+.legacy-form-row textarea {
   font-family: 'Helvetica', 'Ariel', sans-serif;
   font-size: 14px;
 
@@ -210,17 +334,17 @@ input[type='email'] {
   width: 100%;
 }
 
-.formRow .instructions {
+.legacy-form-row .instructions {
   color: #999999;
   font-size: 14px;
   margin-bottom: 30px;
 }
 
-.formRow .checkboxLabel {
+.legacy-form-row .checkbox-label {
   margin-bottom: 0;
 }
 
-.formRow button {
+.legacy-form-row button {
   font-size: 16px;
   font-weight: bold;
   // color: #ffffff;
@@ -233,10 +357,10 @@ input[type='email'] {
   // display: flex;
 }
 
-.formRow button:hover {
+.legacy-form-row button:hover {
   background-color: #76aeed;
 }
-.formRow button:active {
+.legacy-form-row button:active {
   background-color: #407fc7;
 }
 
@@ -303,14 +427,14 @@ div.page {
   align-items: center;
 }
 
-aside.asideBar {
+aside.aside-bar {
   width: 100%;
   display: flex;
   background-color: slategrey;
   display:flex;
 }
 
-nav.mainMenu {
+nav.main-menu {
   height: 10vh;
   display: flex;
   flex-wrap: nowrap;
@@ -336,7 +460,7 @@ nav.mainMenu {
   margin: auto;
 }
 
-.rightBody {
+.right-body {
   width: 100%;
   min-height: 100%;
   display: flex;
@@ -344,20 +468,20 @@ nav.mainMenu {
   align-self: stretch;
 }
 
-.MiddleWrapper {
+.middle-wrapper {
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
   flex: 1;
 }
 
-.MiddleSection {
+.middle-section {
   width: 100%;
   min-width: 100%;
   height: 100%;
   flex-direction: row;
 }
 
-.MiddleHeader {
+.middle-header {
   display: flex;
   width: 100%;
   height: 80px;
@@ -384,29 +508,26 @@ nav.mainMenu {
   font-size: 30px;
   margin-bottom: 0.7em;
 }
-.secticle p,
-.section figure {
-  // margin-bottom: 1em;
-}
+
 .secticle p:last-child,
 .section figure:last-child {
   margin-bottom: 0;
 }
 
-.formSectionContainer {
+.form-section-container {
   display: flex;
   flex-direction: column;
   width:100%;
 }
 
-.footerClass {
+.footer-class {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   background-color: slategrey;
 }
-.footerPiece {
+.footer-piece {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -427,18 +548,18 @@ nav.mainMenu {
 /* Mobile */
 @media only screen and (max-width: 540px) {
   body {
-    background-color: #f09a9d;
+    background-color: white;
   }
 
-  aside.asideBar {
+  aside.aside-bar {
     height: 10%;
   }
 
-  nav.mainMenu {
+  nav.main-menu {
     height: 10%;
   }
 
-  .rightBody {
+  .right-body {
     width: 100%;
     display: block;
   }
@@ -447,7 +568,7 @@ nav.mainMenu {
 /* Tablet */
 @media only screen and (min-width: 541px) and (max-width: 1025px) {
   body {
-    background-color: #f5cf8e;
+    background-color: white;
   }
   .secticle {
     width: 50%;
@@ -459,11 +580,11 @@ nav.mainMenu {
     margin: 0;
   }
 
-  aside.asideBar {
+  aside.aside-bar {
     width: 30%;
   }
 
-  nav.mainMenu {
+  nav.main-menu {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -474,7 +595,7 @@ nav.mainMenu {
     }
   }
 
-  .MiddleSection {
+  .middle-section {
     display: flex;
     flex-wrap: wrap;
   }
@@ -483,7 +604,7 @@ nav.mainMenu {
 /* Desktop */
 @media only screen and (min-width: 1025px) {
   body {
-    background-color: #b2d6ff;
+    background-color: white;
   }
   div.page {
     width: 960px;
@@ -496,11 +617,11 @@ nav.mainMenu {
     width: 50%;
   }
 
-  aside.asideBar {
+  aside.aside-bar {
     height: 10%;
   }
 
-  nav.mainMenu {
+  nav.main-menu {
     width: 100%;
     justify-content: space-evenly;
     align-items: stretch;
@@ -511,46 +632,37 @@ nav.mainMenu {
     }
   }
 
-  .MiddleHeader {
+  .Middle-header {
     height: 10%;
   }
-  .rightBody {
+  .right-body {
     min-height: 90%;
-    border: 1px solid black;
+    // border: 1px solid black;
   }
 
-  .MiddleSection {
+  .middle-section {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .footerClass {
-    // height: 10%;
-    // width: 100%;
-    // background-color: slategrey;
-    // align-self: flex-end;
-  }
-  .footerPiece {
+  .footer-piece {
     width: 25%;
   }
-  .MiddleWrapper {
+  .Middle-wrapper {
     flex: none;
   }
 }
 
 //only for form use
 @media only screen and (min-width: 700px) {
-  .speakerFormHeader,
-  .speakerForm {
-    // width: 600px;
-  }
-  .formRow {
+
+  .form-row {
     flex-direction: row;
     align-items: flex-start; //avoid streching
     margin-bottom: 20px;
   }
 
-  .formRow input[type='text'],
+  .form-row input[type='text'],
   .form-row input[type='email'],    /* Add */
   .form-row select,                 /* These */
   .form-row textarea {
@@ -559,37 +671,37 @@ nav.mainMenu {
     height: initial;
   }
 
-  .formRow label {
+  .form-row label {
     text-align: right;
     // width: 120px;
     margin-top: 7px;
     padding-right: 20px;
   }
 
-  .legacyFormRow {
+  .legacy-form-row {
     margin-bottom: 10px;
   }
 
-  .legacyFormRow legend {
+  .legacy-form-row legend {
     width: 120px;
     text-align: right;
     padding-right: 20px;
   }
 
-  .legacyFormRow legend {
+  .legacy-form-row legend {
     float: left;
   }
 
-  .formRow .instructions {
+  .form-row .instructions {
     margin-left: 120px;
   }
 
-  .formRow .checkboxLabel {
+  .form-row .checkbox-label {
     margin-left: 120px;
     width: auto;
   }
 
-  .formRow button {
+  .form-row button {
     margin-left: 120px;
   }
 }
