@@ -1,13 +1,12 @@
-
-    
-    "test": "jest --env=jsdom",
+"scripts": {
+    "test": "jest ",
     "testJest": "jest src/tests/sum --notify --config=jest.config.js",
     "testP": " node ./src/tests/puppeteer/example.js",
     "gql": "node ./src/gql/server.js",
     "postinstall": "npm start",
     "runserver": "(cd ./src &&  nodemon  ./server)",
     "prestart": "(cd ./src && start nodemon  ./server)  ",
-    "start": " webpack serve   --hot --env PLATFORM=local --env VERSION=stag --mode development --config config/webpack.base.config.js --history-api-fallback --open Chrome.exe",
+    "start": " webpack serve   --hot --env PLATFORM=local --env VERSION=stag --mode development --config config/webpack.base.config.js --history-api-fallback ",
     "startwebapplication": " webpack serve  --hot --env PLATFORM=local --env VERSION=stag --mode development --config config/webpack.base.config.js --history-api-fallback --open Chrome.exe",
     "poststart": "",
     "prebuild": "webpack --mode production --config config/webpack.prod.config.js --env PLATFORM=production --env VERSION=stag --progress",
@@ -15,13 +14,8 @@
     "lintFix": "eslint --debug src/. --fix",
     "prettycheck": "prettier  --check src/components/App.jsx",
     "pretty": "prettier src/** --write --only-changed ",
-    "prettystage": "pretty-quick --staged",
-    "husky": {
-      "hooks": {
-        "pre-commit": "pretty-quick --staged"
-      }
-    }
-  }
+    "prettystage": "pretty-quick --staged"
+  },
 
 
 "devDependencies": {
