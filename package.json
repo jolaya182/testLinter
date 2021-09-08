@@ -112,6 +112,6 @@
     "uncontrollable": "^7.2.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.28.0",
-    "webpack-merge": "^5.7.3",
+    "webpack-merge": "^5.7.3"
   }
 }
