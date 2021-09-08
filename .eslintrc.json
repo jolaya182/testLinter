@@ -3,11 +3,7 @@
     "browser": true,
     "es6": true
   },
-  "extends": [
-    "airbnb",
-    "plugin:prettier/recommended",
-    "plugin:jest/recommended"
-  ],
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -19,8 +15,8 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "jest"],
-  "parser": "babel-eslint",
+  "plugins": ["react", "prettier"],
+  "parser": "@babel/eslint-parser",
   "rules": {
     // "react/require-default-props": "off", // airbnb use error
     // "react/forbid-prop-types": "off", // airbnb use error
@@ -37,15 +33,13 @@
     "no-restricted-globals": "off",
     "import/no-unresolved": "off",
     "jsx-a11y/click-events-have-key-events": "off",
-    "no-named-as-default":"off",
-    "no-named-as-default-member":"off",
+    "no-named-as-default": "off",
+    "no-named-as-default-member": "off",
     "import/no-named-as-default-member": "off",
     "import/named": "off",
-
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error"
+    "import/no-extraneous-dependencies": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-param-reassign": "off",
+    "jsx-a11y/no-static-element-interactions":"off"
   }
 }
