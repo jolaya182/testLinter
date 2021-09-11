@@ -122,6 +122,27 @@ export const fetchExecuteCallbackFunction = (
     });
 };
 
+export const fetchAndCallback = async (url, method, callBackFunction, data) => {
+  const options = {
+    headers: {},
+    method
+  };
+  try {
+    if (method === `post`) options.body = data;
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      const message = `An error has occurred ${response.status}`;
+      throw new Error(message);
+    }
+    const fetchedResults = await response.json();
+    console.log('received data', fetchedResults);
+    callBackFunction(fetchAndCallback);
+    return fetchedResults;
+  } catch (e) {
+    return e.message;
+  }
+};
+
 /**
  * returns a string sorted array
  *
